@@ -1,13 +1,15 @@
 import * as Tabs from "@radix-ui/react-tabs";
 import { Transaction as TransactionType } from "../../../types";
-import { transactions } from "../../api/data/transactions";
+import { useFetch } from "../../hooks/useFetch";
 import "./index.css";
 import { Transaction } from "./item";
+import { Loading } from "../loading";
 
-const isExpense = (transaction: TransactionType) => transaction.amount.value < 0;
+const isExpense = (transaction: TransactionType) =>
+  transaction.amount.value < 0;
 const isIncome = (transaction: TransactionType) => transaction.amount.value > 0;
 
-const Expenses = () => {
+const Expenses = ({ transactions }: { transactions: TransactionType[] }) => {
   return (
     <table aria-label="Expenses">
       <thead>
@@ -26,7 +28,7 @@ const Expenses = () => {
   );
 };
 
-const Income = () => {
+const Income = ({ transactions }: { transactions: TransactionType[] }) => {
   return (
     <table aria-label="Income">
       <thead>
@@ -46,6 +48,15 @@ const Income = () => {
 };
 
 export const TransactionHistory = () => {
+  const { data: transactions, loading } =
+    useFetch<TransactionType[]>("/api/transactions");
+
+  if (loading) {
+    return <Loading />;
+  }
+
+  if (!transactions) return;
+
   return (
     <>
       <h1 className="align-left">Transaction History</h1>
@@ -56,10 +67,10 @@ export const TransactionHistory = () => {
         </Tabs.List>
 
         <Tabs.Content className="TabsContent" value="expenses">
-          <Expenses />
+          <Expenses transactions={transactions} />
         </Tabs.Content>
         <Tabs.Content className="TabsContent" value="income">
-          <Income />
+          <Income transactions={transactions} />
         </Tabs.Content>
       </Tabs.Root>
     </>
