@@ -11,11 +11,22 @@ type Props = {
 export const Transaction = ({ transaction }: Props) => (
   <tr>
     <td>
-      <div className="transaction-detail">
+      <div
+        className="transaction-detail"
+        role="group"
+        aria-labelledby={`transaction-description-${transaction.id} transaction-category-${transaction.id}`}
+      >
         <Avatar name={transaction.description} />
         <div className="transaction-description">
-          {transaction.description}
-          <div className="transaction-category">{transaction.category}</div>
+          <span id={`transaction-description-${transaction.id}`}>
+            {transaction.description}
+          </span>
+          <span
+            id={`transaction-category-${transaction.id}`}
+            className="transaction-category"
+          >
+            {transaction.category}
+          </span>
         </div>
       </div>
     </td>

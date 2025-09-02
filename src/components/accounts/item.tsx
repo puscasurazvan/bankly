@@ -8,9 +8,15 @@ type Props = {
 
 export const AccountItem = ({ account }: Props) => {
   return (
-    <div className="account">
-      <div className="total">Total {account.balance.amount.currency}</div>
-      <strong>
+    <div
+      className="account"
+      role="region"
+      aria-label={`Account balance in ${account.balance.amount.currency}`}
+    >
+      <div className="total" id={`account-total-${account.account_id}`}>
+        Total {account.balance.amount.currency}
+      </div>
+      <strong aria-labelledby={`account-total-${account.account_id}`}>
         {formatCurrency(
           account.balance.amount.value,
           account.balance.amount.currency

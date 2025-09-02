@@ -5,8 +5,8 @@ export const Loading = ({
 }: {
   displayText?: string;
 }) => (
-  <div className="loading">
+  <div className="loading" aria-busy="true" aria-live="polite">
     {displayText}
-    <span className="loader"></span>
+    <span className="loader" aria-label="Loading" />
   </div>
 );

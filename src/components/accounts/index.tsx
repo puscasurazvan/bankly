@@ -25,8 +25,14 @@ export const Accounts = () => {
 
   return (
     <>
-      <h1 className="align-left">Your accounts</h1>
-      <div className="accounts">
+      <h1 className="align-left" id="accounts-heading">
+        Your accounts
+      </h1>
+      <div
+        className="accounts"
+        role="region"
+        aria-labelledby="accounts-heading"
+      >
         {accounts?.map((account) => (
           <AccountItem account={account} key={account.account_id} />
         ))}
