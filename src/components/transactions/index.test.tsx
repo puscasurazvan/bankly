@@ -59,4 +59,30 @@ describe("transaction history", () => {
     expect(expensesTabTrigger).toHaveAttribute("data-state", "inactive");
     expect(screen.queryByText("-€20.25")).not.toBeInTheDocument();
   });
+
+  test("shows loading state while waiting for API", async () => {
+    server.use(
+      http.get("/api/transactions", async () => {
+        await new Promise((res) => setTimeout(res, 200));
+        return HttpResponse.json(transactions);
+      })
+    );
+    render(<TransactionHistory />);
+    expect(
+      screen.getByText(/Loading your transaction history/)
+    ).toBeInTheDocument();
+    expect(await screen.findByText("Transaction History")).toBeInTheDocument();
+  });
+
+  test("shows error state when API fails", async () => {
+    server.use(
+      http.get("/api/transactions", () =>
+        HttpResponse.text("Server error", { status: 500 })
+      )
+    );
+    render(<TransactionHistory />);
+    expect(
+      await screen.findByText(/Error loading your transaction history/)
+    ).toBeInTheDocument();
+  });
 });

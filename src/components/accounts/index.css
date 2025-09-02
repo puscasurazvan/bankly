@@ -8,6 +8,7 @@
   background: var(--background-800);
   padding: var(--spacer-large);
   text-align: left;
+  border-radius: var(--spacer-smallall);
 }
 
 .total {

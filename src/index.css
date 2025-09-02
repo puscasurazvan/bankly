@@ -7,6 +7,7 @@
   --link: #646cff;
 
   /* spacers */
+  --spacer-smallall: 0.25rem;
   --spacer-small: 0.5rem;
   --spacer-medium: 1rem;
   --spacer-large: 1.5rem;
@@ -86,6 +87,8 @@ button[data-state="active"] {
 
 .align-left {
   text-align: left;
+  font-size: var(--font-large);
+  font-weight: 500;
 }
 
 .flow > * + * {

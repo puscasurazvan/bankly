@@ -2,6 +2,7 @@ import type { Transaction as TransactionType } from "../../../types";
 import { Avatar } from "./avatar";
 import { formatCurrency } from "../../utils/formatCurrency";
 import { formatDate } from "../../utils/formatDate";
+import "./index.css";
 
 type Props = {
   transaction: TransactionType;

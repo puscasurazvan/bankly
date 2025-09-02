@@ -46,3 +46,8 @@ th {
   grid-template-columns: min-content 1fr;
   gap: var(--spacer-medium);
 }
+
+.transaction-category {
+  color: var(--primary-300);
+  text-transform: capitalize;
+}

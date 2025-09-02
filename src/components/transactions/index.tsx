@@ -4,6 +4,7 @@ import { useFetch } from "../../hooks/useFetch";
 import "./index.css";
 import { Transaction } from "./item";
 import { Loading } from "../loading";
+import { Error } from "../error";
 
 const isExpense = (transaction: TransactionType) =>
   transaction.amount.value < 0;
@@ -48,11 +49,18 @@ const Income = ({ transactions }: { transactions: TransactionType[] }) => {
 };
 
 export const TransactionHistory = () => {
-  const { data: transactions, loading } =
-    useFetch<TransactionType[]>("/api/transactions");
+  const {
+    data: transactions,
+    loading,
+    error,
+  } = useFetch<TransactionType[]>("/api/transactions");
 
   if (loading) {
     return <Loading />;
+  }
+
+  if (error) {
+    return <Error />;
   }
 
   if (!transactions) return;
