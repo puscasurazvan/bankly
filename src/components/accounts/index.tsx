@@ -9,7 +9,7 @@ export const Accounts = () => {
   const { data: accounts, loading } = useFetch<Account[]>("/api/accounts");
 
   if (loading) {
-    return <Loading />;
+    return <Loading displayText="Loading your accounts..." />;
   }
 
   if (!accounts) return;
