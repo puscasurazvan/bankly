@@ -1,11 +1,20 @@
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { TransactionHistory } from ".";
+import { http, HttpResponse } from "msw";
+import { server } from "../../../vitest-setup";
+import { transactions } from "../../api/data/transactions";
 
 describe("transaction history", () => {
-  test("the expenses tab should be shown by default", () => {
+  beforeEach(() => {
+    server.use(
+      http.get("/api/transactions", () => HttpResponse.json(transactions))
+    );
+  });
+  test("the expenses tab should be shown by default", async () => {
     render(<TransactionHistory />);
 
-    expect(screen.getByText("Transaction History")).toBeInTheDocument();
+    expect(await screen.findByText("Transaction History")).toBeInTheDocument();
 
     const expensesTabTrigger = screen.getByRole("tab", {
       name: "Expenses",
@@ -21,8 +30,10 @@ describe("transaction history", () => {
     expect(screen.getByText("-20.25")).toBeInTheDocument();
   });
 
-  test.skip("changing between the expenses and income tabs should show different transactions", () => {
+  test("changing between the expenses and income tabs should show different transactions", async () => {
     render(<TransactionHistory />);
+
+    await screen.findByText("Transaction History");
 
     const expensesTabTrigger = screen.getByRole("tab", {
       name: "Expenses",
@@ -42,7 +53,7 @@ describe("transaction history", () => {
 
     expect(screen.getByText("-20.25")).toBeInTheDocument();
 
-    incomeTabTrigger.click();
+    await userEvent.click(incomeTabTrigger);
 
     expect(incomeTabTrigger).toHaveAttribute("data-state", "active");
     expect(expensesTabTrigger).toHaveAttribute("data-state", "inactive");
