@@ -5,10 +5,15 @@ test("should render as expected", () => {
   const { asFragment } = render(<Loading />);
 
   expect(asFragment()).toMatchInlineSnapshot(`
-<DocumentFragment>
-  <div>
-    Loading...
-  </div>
-</DocumentFragment>
-`);
+    <DocumentFragment>
+      <div
+        class="loading"
+      >
+        Loading your transaction history...
+        <span
+          class="loader"
+        />
+      </div>
+    </DocumentFragment>
+  `);
 });

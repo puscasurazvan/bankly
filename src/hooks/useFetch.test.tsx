@@ -1,4 +1,3 @@
-
 import { renderHook } from "@testing-library/react";
 import { useFetch } from "./useFetch";
 import { vi } from "vitest";

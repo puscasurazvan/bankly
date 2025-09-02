@@ -27,7 +27,7 @@ describe("transaction history", () => {
     });
 
     expect(expensesTable).toBeInTheDocument();
-    expect(screen.getByText("-20.25")).toBeInTheDocument();
+    expect(screen.getByText("-€20.25")).toBeInTheDocument();
   });
 
   test("changing between the expenses and income tabs should show different transactions", async () => {
@@ -51,12 +51,12 @@ describe("transaction history", () => {
     expect(expensesTable).toBeInTheDocument();
     expect(incomeTable).not.toBeInTheDocument();
 
-    expect(screen.getByText("-20.25")).toBeInTheDocument();
+    expect(screen.getByText("-€20.25")).toBeInTheDocument();
 
     await userEvent.click(incomeTabTrigger);
 
     expect(incomeTabTrigger).toHaveAttribute("data-state", "active");
     expect(expensesTabTrigger).toHaveAttribute("data-state", "inactive");
-    expect(screen.queryByText("-20.25")).not.toBeInTheDocument();
+    expect(screen.queryByText("-€20.25")).not.toBeInTheDocument();
   });
 });
