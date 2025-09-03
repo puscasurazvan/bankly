@@ -1,63 +1,125 @@
-# bankly
+# 🚀 Thisisbud Challenge 🚀
 
-Heya there! 👋
+- Clone repo, npm i && npm run dev to run the project
+- Project was done in 2 sessions
 
-Welcome to [Bud](https://www.thisisbud.com)'s takehome frontend developer showcase!
+## Technologies used:
 
-> We just wanted to say thank you for interviewing with us! The job hunting process can be a really stressful and anxious time, but we promise you, we don't bite!
->
-> If there's anything you need or any accommodations we can make so you feel at ease _please_ let us know and we'll do out best to sort it!  
-> ~ _Frontend at Bud_
+- React 18 ( Vite with Typescript )
+- Classic CSS Components
+- Vanilla API calling with a custom useFetch hook
 
-This is way less of a test with right and wrong answers and more of us looking at:
+## 🔮 Future Enhancements
 
-- "How do you write code?"
-- "How do you test?"
-- "How do you think about accessibility?"
+- Tanstack Query for api calls, error and loading handling
+- Improve tests coverage
+- Improve accesibility following the best practices
 
-If you're struggling to work out what the "right answer" looks like - please don't! This codebase is really just going to be a conversation starter for our next discussion, so don't worry about perfect.
+## 📦 Installation & Setup
 
-**What we are looking for is a React app based on the [tasks](./tasks) we've set out.**
+1. **Clone the repository**
 
-There's a quite a few tasks in there - so please, feel no obligation to do all of them - keep going until you get bored or stuck and just let us know where you get upto.
+   ```bash
+   git clone https://github.com/puscasurazvan/bankly.git
+   cd bankly
+   ```
 
-You can put as much or as little into this as you'd like - so feel free to go a bit wild if you want.
+2. **Install dependencies**
 
-**When you're finished with the exercise, please email your Bud contact with a link to your Github repository, or just attach it as a .zip file.**
+   ```bash
+   npm install
+   ```
 
-Thanks!  
-~ _Frontend at Bud_
+3. **Start the development server**
 
----
+   ```bash
+   npm run dev
+   ```
 
-### Getting setup
+4. **Open your browser**
+   Navigate to `http://localhost:5173`
 
-#### Prerequisites
+## 📁 Project Structure
 
-- A code editor
-- A modern-_ish_ version of npm & node.
-- Docker (but only if you choose to run the app in a [devcontainer](https://code.visualstudio.com/docs/remote/containers))
-
-#### Installation
-
-The application has a [dev-container](./.devcontainer/devcontainer.json) that enables you to get setup quickly if you're familiar with them. Your code editor might automatically find it and ask you to run it when you load the codebase.
-
-Otherwise, you can get setup 'manually' pretty quickly too!
-
-1. In a terminal type `npm install`
-2. Wait a couple of minutes for everything to download
-3. If that's all worked, that's all you need to do!
-4. Type `npm run dev` and you should see a message a little like this in the terminal:
-
-```bash
-  VITE v7.1.2  ready in 921 ms
-
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
 ```
-
-#### Run commands
-
-- `npm run dev` - Starts the vite server at `localhost:5173` (by default).
-- `npm run test` - Runs tests, once.
-- `npm run test:coverage` - Runs tests and shows the line coverage.
+/home/razvan/bankly/
+├───.gitignore
+├───.nvmrc
+├───index.html
+├───package-lock.json
+├───package.json
+├───pnpm-lock.yaml
+├───README.md
+├───tsconfig.json
+├───vite.config.ts
+├───vitest-setup.ts
+├───.devcontainer/
+│   ├───devcontainer.json
+│   └───Dockerfile
+├───.git/...
+├───dist/...
+├───node_modules/...
+├───public/
+│   ├───bankly.svg
+│   ├───bud.svg
+│   ├───favicon.webp
+│   └───mockServiceWorker.js
+├───src/
+│   ├───app.css
+│   ├───app.test.tsx
+│   ├───app.tsx
+│   ├───index.css
+│   ├───main.tsx
+│   ├───api/
+│   │   ├───handlers.test.tsx
+│   │   ├───handlers.ts
+│   │   └───data/
+│   │       ├───accounts.ts
+│   │       └───transactions.ts
+│   ├───assets/
+│   │   └───react.svg
+│   ├───components/
+│   │   ├───accounts/
+│   │   │   ├───index.css
+│   │   │   ├───index.tsx
+│   │   │   └───item.tsx
+│   │   ├───error/
+│   │   │   ├───index.css
+│   │   │   ├───index.test.tsx
+│   │   │   └───index.tsx
+│   │   ├───loading/
+│   │   │   ├───index.css
+│   │   │   ├───index.test.tsx
+│   │   │   └───index.tsx
+│   │   └───transactions/
+│   │       ├───avatar.tsx
+│   │       ├───index.css
+│   │       ├───index.test.tsx
+│   │       ├───index.tsx
+│   │       └───item.tsx
+│   ├───hooks/
+│   │   ├───useFetch.test.tsx
+│   │   └───useFetch.tsx
+│   ├───utils/
+│   │   ├───format.ts
+│   │   ├───formatCurrency.test.ts
+│   │   ├───formatCurrency.ts
+│   │   ├───formatDate.test.ts
+│   │   └───formatDate.ts
+│   └───views/
+│       └───home/
+│           ├───index.css
+│           └───index.tsx
+├───tasks/
+│   ├───01_connecting-to-the-api.md
+│   ├───02_creating-a-loading-state.md
+│   ├───03_creating-an-error-state.md
+│   ├───04_user-oriented-formatting.md
+│   ├───05_fix-the-test.md
+│   ├───06_match-the-designs.md
+│   ├───07_celebrate.md
+│   └───assets/
+│       └───01.png
+└───types/
+    └───index.ts
+```
