@@ -16,7 +16,10 @@ export const AccountItem = ({ account }: Props) => {
       <div className="total" id={`account-total-${account.account_id}`}>
         Total {account.balance.amount.currency}
       </div>
-      <strong aria-labelledby={`account-total-${account.account_id}`}>
+      <strong
+        className="total__amount"
+        aria-labelledby={`account-total-${account.account_id}`}
+      >
         {formatCurrency(
           account.balance.amount.value,
           account.balance.amount.currency

@@ -13,4 +13,10 @@
 
 .total {
   color: var(--primary-300);
+  padding: var(--spacer-small);
+}
+
+.total__amount {
+  padding: var(--spacer-small);
+  font-size: var(--spacer-large);
 }

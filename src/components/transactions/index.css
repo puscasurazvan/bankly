@@ -28,6 +28,7 @@ table {
   border-radius: var(--spacer-smallall);
   width: 100%;
   text-align: left;
+  border-collapse: collapse;
 }
 
 td {
@@ -35,10 +36,12 @@ td {
 }
 
 th {
-  color: var(--primary-900);
+  color: var(--primary-300);
   border-bottom: 1px solid var(--primary-300);
   padding: var(--spacer-medium);
   text-align: left;
+  font-size: var(--font-medium);
+  font-weight: 400;
 }
 
 .transaction-description {

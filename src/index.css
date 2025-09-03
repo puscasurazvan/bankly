@@ -28,9 +28,7 @@
   color: var(--primary-900);
   background-color: var(--background-900);
   font-synthesis: none;
-  width: 90vw;
-  max-width: 800px;
-  margin: auto;
+
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -89,6 +87,7 @@ button[data-state="active"] {
   text-align: left;
   font-size: var(--font-large);
   font-weight: 500;
+  margin-top: var(--spacer-xxlarge);
 }
 
 .flow > * + * {
