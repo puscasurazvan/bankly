@@ -44,18 +44,26 @@ th {
   font-weight: 400;
 }
 
-.transaction-description {
+.transaction__description {
   display: flex;
   flex-direction: column;
 }
 
-.transaction-detail {
+.transaction__detail {
   display: grid;
   grid-template-columns: min-content 1fr;
   gap: var(--spacer-medium);
 }
 
-.transaction-category {
+.transaction__category {
   color: var(--primary-300);
   text-transform: capitalize;
+}
+
+.tabs__trigger {
+  border: 1px solid var(--primary-100);
+}
+
+.transaction__amount {
+  font-weight: 500;
 }

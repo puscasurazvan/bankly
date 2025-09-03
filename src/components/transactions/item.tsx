@@ -12,18 +12,18 @@ export const Transaction = ({ transaction }: Props) => (
   <tr>
     <td>
       <div
-        className="transaction-detail"
+        className="transaction__detail"
         role="group"
         aria-labelledby={`transaction-description-${transaction.id} transaction-category-${transaction.id}`}
       >
         <Avatar name={transaction.description} />
-        <div className="transaction-description">
+        <div className="transaction__description">
           <span id={`transaction-description-${transaction.id}`}>
             {transaction.description}
           </span>
           <span
             id={`transaction-category-${transaction.id}`}
-            className="transaction-category"
+            className="transaction__category"
           >
             {transaction.category}
           </span>
@@ -33,7 +33,7 @@ export const Transaction = ({ transaction }: Props) => (
     <td>
       <div>{formatDate(transaction.date)}</div>
     </td>
-    <td className="transaction-amount">
+    <td className="transaction__amount">
       <div className="amount">
         {formatCurrency(
           transaction.amount.value,

@@ -1,0 +1,13 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Error component > should render as expected 1`] = `
+<DocumentFragment>
+  <div
+    aria-live="assertive"
+    class="error"
+    role="alert"
+  >
+    Error loading your transaction history. ⚠️
+  </div>
+</DocumentFragment>
+`;

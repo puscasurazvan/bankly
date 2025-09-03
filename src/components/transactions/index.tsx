@@ -76,8 +76,12 @@ export const TransactionHistory = () => {
           aria-label="Filter your transactions"
           aria-labelledby="transactions-heading"
         >
-          <Tabs.Trigger value="expenses">Expenses</Tabs.Trigger>
-          <Tabs.Trigger value="income">Income</Tabs.Trigger>
+          <Tabs.Trigger className="tabs__trigger" value="expenses">
+            Expenses
+          </Tabs.Trigger>
+          <Tabs.Trigger className="tabs__trigger" value="income">
+            Income
+          </Tabs.Trigger>
         </Tabs.List>
 
         <Tabs.Content className="TabsContent" value="expenses">

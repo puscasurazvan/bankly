@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should render as expected 1`] = `
+<DocumentFragment>
+  <div
+    aria-busy="true"
+    aria-live="polite"
+    class="loading"
+  >
+    Loading your transaction history...
+    <span
+      aria-label="Loading"
+      class="loader"
+    />
+  </div>
+</DocumentFragment>
+`;

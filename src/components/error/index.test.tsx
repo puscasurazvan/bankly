@@ -15,4 +15,10 @@ describe("Error component", () => {
     expect(screen.getByText(/Something went wrong!/)).toBeInTheDocument();
     expect(screen.getByText(/⚠️/)).toBeInTheDocument();
   });
+
+  test("should render as expected", () => {
+    const { asFragment } = render(<Error />);
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

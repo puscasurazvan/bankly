@@ -4,16 +4,5 @@ import { Loading } from ".";
 test("should render as expected", () => {
   const { asFragment } = render(<Loading />);
 
-  expect(asFragment()).toMatchInlineSnapshot(`
-    <DocumentFragment>
-      <div
-        class="loading"
-      >
-        Loading your transaction history...
-        <span
-          class="loader"
-        />
-      </div>
-    </DocumentFragment>
-  `);
+  expect(asFragment()).toMatchSnapshot();
 });
